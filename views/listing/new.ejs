@@ -1,0 +1,92 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2"><br>
+            <h3>Create NewPost </h3>
+            <form method="POST" action="/listings/create" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="listing[title]" placeholder="Enter Title" required>
+                    <div class="invalid-feedback">
+                        Please choose a title.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control"  rows="5" cols="10" id="description" placeholder="Write Description" required></textarea>
+                    <div class="invalid-feedback">
+                        Description should be entered 
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                
+                <!-- <div class="mb-3">
+                   <label for="imageLink" class="form-label">Image link</label>
+                   <input type="text" id="imageLink" name="listing[image]" class="form-control" placeholder="Enter image URL/Link">
+                </div> -->
+
+                <!-- ===> Choose file -->
+                 <div class="row">
+                    <div class="mb-3 col-md-8">
+                        <label for="imageLink" class="form-label">Add Listing Image</label>
+                        <input type="file" id="imageLink" name="listing[image]" class="form-control" placeholder="Enter image URL/Link" required>
+                     </div>
+                     
+                     <div class="mb-3 col-md-4">
+                        <label for="selectCategory" class="form-label">Category</label>
+                        <select class="form-select selectCategory" name="listing[category]" aria-label="Default select example">
+                            <option value="Trending">Trending</option>
+                            <option value="Beachfront">Beachfront</option>
+                            <option value="Bed&Breakfasts">Bed & Breakfasts</option>
+                            <option value="Boats">Boats</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Luxe">Luxe</option>
+                            <option value="AmazingPools">Amazing Pools</option>
+                            <option value="Castle">Castle</option>
+                            <option value="LakeFront">Lakefront</option>
+
+                          </select>
+                     </div>
+                 </div>
+               
+
+                <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="price">Price</label>
+                        <input  class="form-control" id="price" name="listing[price]" placeholder="1200/-" required>
+                        <div class="invalid-feedback">
+                            Enter price
+                        </div>
+                     </div>
+             
+                     <div class="mb-3 col-md-8">
+                        <label class="form-label" for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name="listing[country]" placeholder="India" required>
+                        <div class="invalid-feedback">
+                           Country must be entered
+                        </div>
+                     </div>
+                </div>
+        
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                    <input type="text" class="form-control" id="location" name="listing[location]" placeholder="Odisha" required>
+                    <div class="invalid-feedback">
+                        Location must be entered
+                    </div>
+                 </div>
+                <button class="btn btn-danger">Create Post</button>
+                <br><br>
+            </form>
+    
+        </div>
+    </div>
+    
+</body>

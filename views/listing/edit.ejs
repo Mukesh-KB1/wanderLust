@@ -1,0 +1,105 @@
+<%layout("/layouts/boilerplate.ejs")%>
+<body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><h3>Edit your post : <%=list._id%></h3><br>
+
+            <form method="POST" action="/listings/<%=list._id%>?_method=PUT" class="needs-validation" enctype="multipart/form-data" novalidate>
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" id="title" name="listing[title]" value="<%=list.title%>" required>
+                    <div class="invalid-feedback">
+                        Please choose a title.
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" id="description" required><%=list.description%></textarea>
+                    <div class="invalid-feedback">
+                        Description should be entered 
+                    </div>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <!-- <div class="mb-3">
+                    <label for="imageLink" class="form-label">Image link</label>
+                    <input type="text" id="imageLink" name="listing[image]" class="form-control" value="<%=list.image%>" required>
+                    <div class="invalid-feedback">
+                        Image link must be given 
+                    </div>
+                 </div> -->
+                 <div class="mb-3">
+                    <p>List Image</p>
+                    <img src="<%=originalImage%>" height="100" width="150">
+                 </div>
+
+                 <div class="mb-3 col-md-8">
+                    <label for="imageLink" class="form-label">Upload New Image</label>
+                    <input type="file" id="imageLink" name="listing[image]" class="form-control" value="<%=list.image%>">
+                     <div class="invalid-feedback">
+                         Image must be given 
+                     </div>
+                 </div>
+
+                 <!-- <div class="row">
+                    <div class="mb-3 col-md-8">
+                       <label for="imageLink" class="form-label">Upload New Image</label>
+                       <input type="file" id="imageLink" name="listing[image]" class="form-control" value="<.%=list.image%>">
+                        <div class="invalid-feedback">
+                            Image must be given 
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3 col-md-4">
+                        <label for="selectCategory" class="form-label">Category</label>
+                        <select class="form-select selectCategory" name="listing[category]" aria-label="Default select example">
+                            <option value="Beachfront">Beachfront</option>
+                            <option value="Bed&Breakfasts">Bed & Breakfasts</option>
+                            <option value="Boats">Boats</option>
+                            <option value="Arctic">Arctic</option>
+                            <option value="Camping">Camping</option>
+                            <option value="Luxe">Luxe</option>
+                            <option value="AmazingPools">Amazing pools</option>
+                            <option value="Castle">Castle</option>
+                            <option value="Lake">Lake</option>
+
+                        </select>
+                     </div>
+                 </div> -->
+
+
+                 <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <label class="form-label" for="price">Price</label>
+                        <input class="form-control" id="price" name="listing[price]" value="<%=list.price%>" required>
+                        <div class="invalid-feedback">
+                            Enter price
+                        </div>
+                     </div>
+             
+                     <div class="mb-3 col-md-8">
+                        <label class="form-label" for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name="listing[country]" value="<%=list.country%>" required>
+                        <div class="invalid-feedback">
+                        Country must be entered
+                    </div>
+                 </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location</label>
+                        <input type="text" class="form-control" id="location" name="listing[location]" value="<%=list.location%>" required>
+                        <div class="invalid-feedback">
+                            Location must be entered
+                        </div>
+                </div>
+                <button class="btn btn-secondary">Edit Post</button><br><br>
+            </form>
+        </div>
+    </div>
+    
+
+</body>
