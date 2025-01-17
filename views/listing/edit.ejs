@@ -18,7 +18,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
-                    <textarea name="listing[description]" class="form-control" id="description" required><%=list.description%></textarea>
+                    <textarea name="listing[description]" class="form-control" id="description" rows="6" required><%=list.description%></textarea>
                     <div class="invalid-feedback">
                         Description should be entered 
                     </div>
@@ -33,16 +33,18 @@
                         Image link must be given 
                     </div>
                  </div> -->
-                 <div class="mb-3">
-                    <p>List Image</p>
-                    <img src="<%=originalImage%>" height="100" width="150">
-                 </div>
-
-                 <div class="mb-3 col-md-8">
-                    <label for="imageLink" class="form-label">Upload New Image</label>
-                    <input type="file" id="imageLink" name="listing[image]" class="form-control" value="<%=list.image%>">
-                     <div class="invalid-feedback">
-                         Image must be given 
+                 <div class="row">
+                    <div class="mb-3 col-md-4">
+                        <p>List Image</p>
+                        <img src="<%=originalImage%>" height="100" width="150">
+                     </div>
+    
+                     <div class="mb-3 col-md-8">
+                        <label for="imageLink" class="form-label">Upload New Image</label>
+                        <input type="file" id="imageLink" name="listing[image]" class="form-control" value="<%=list.image%>">
+                         <div class="invalid-feedback">
+                             Image must be given 
+                         </div>
                      </div>
                  </div>
 
