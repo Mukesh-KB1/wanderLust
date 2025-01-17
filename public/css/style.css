@@ -88,6 +88,9 @@ body{
     .navbar{
         height: 100%;
     }
+    /* .card-review{
+        margin-left: 0 !important;
+    } */
 }
 /* .nav-link{
     color: black !important;
@@ -139,7 +142,6 @@ body{
 .view_btns{
     display: flex;
 }
-
 
 
 /* Filters Style */
